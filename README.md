@@ -1,6 +1,8 @@
 # Bindapter
 ## You will never build an adapter again
 
+***Work In Progress***
+
 Bindapter use the power of DataBinding to build a flexible RecyclerView.Adapter which will save you a lot of time.
 
 Bindapter is totally built with Kotlin + Love 💖.
