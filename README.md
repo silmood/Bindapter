@@ -12,7 +12,7 @@ Bindapter is totally built with Kotlin + Love 💖.
 Only create your Bindapter
 
 ```kotlin
-val adapter = DataBindingRecyclerAdapter<Deal>(R.layout.item_view, BR.data_binding_variable)
+val adapter = Bindapter<ItemModel>(R.layout.item_view, BR.data_binding_variable)
 ```
 
 And then set it to your RecyclerView
