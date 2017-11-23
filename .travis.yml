@@ -8,11 +8,11 @@ env:
 android:
   components:
      - tools
-     - build-tools-27.0.0
+     - build-tools-26.1.0
      - platform-tools
      - extra-android-m2repository
      - extra-google-android-support
-     - android-27
+     - android-26
 
 licenses:
     - 'android-sdk-preview-license-.+'
@@ -20,5 +20,6 @@ licenses:
     - 'google-gdk-license-.+'
 
 script:
-  - ./gradlew build
-  - ./gradlew assemble testDebug
+  - ./gradlew :bindapter:ktlint
+  - ./gradlew assembleDebug
+  - ./gradlew :bindapter:assemble testDebug
