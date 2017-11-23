@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SBindapter</string>
+    <string name="label_kotlin_example">Kotlin Example</string>
+    <string name="label_java_example">Java Example</string>
 </resources>
