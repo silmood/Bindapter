@@ -12,7 +12,7 @@ import android.view.ViewGroup
 class Bindapter<MODEL>(private val viewItemResId: Int,
                        private val itemVariableId: Int) : RecyclerView.Adapter<BindapterHolder<MODEL>>() {
 
-    val items: MutableList<MODEL> = mutableListOf()
+    private val items: MutableList<MODEL> = mutableListOf()
 
     override fun getItemCount() = items.size
 
@@ -30,4 +30,28 @@ class Bindapter<MODEL>(private val viewItemResId: Int,
         val item = items[position]
         holder.bindItem(itemVariableId, item)
     }
+
+    fun addItem(item: MODEL) {
+        items.add(item)
+        notifyItemInserted(items.size - 1)
+    }
+
+    fun addItems(items: List<MODEL>) {
+        val previousSize = this.items.size - 1
+
+        this.items.addAll(items)
+        notifyItemRangeInserted(previousSize, items.size)
+    }
+
+    fun replaceItems(items: List<MODEL>) {
+        this.items.clear()
+        this.items.addAll(items)
+        notifyDataSetChanged()
+    }
+
+    fun removeItem(position: Int) {
+        this.items.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
 }
