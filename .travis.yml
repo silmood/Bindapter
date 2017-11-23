@@ -1,0 +1,25 @@
+language: android
+jdk: oraclejdk8
+
+env:
+  global:
+    - ADB_INSTALL_TIMEOUT=8
+
+android:
+  components:
+     - tools
+     - build-tools-26.1.0
+     - platform-tools
+     - extra-android-m2repository
+     - extra-google-android-support
+     - android-26
+
+licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
+
+script:
+  - ./gradlew :bindapter:ktlint
+  - ./gradlew assembleDebug
+  - ./gradlew :bindapter:assemble testDebug
