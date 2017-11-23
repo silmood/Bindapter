@@ -50,8 +50,10 @@ dependencies {
 2. Configure maven url in your root `build.gradle` *This one is temporal 😄*
 
 ```groovy
-repositories {
-  maven { url  "http://dl.bintray.com/silmood/bindapter" }
+allProjects {
+    repositories {
+        maven { url  "http://dl.bintray.com/silmood/bindapter" }
+    }
 }
 ```
 
