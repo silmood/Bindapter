@@ -1,7 +1,6 @@
 # Bindapter
 ## You will never build an adapter again
 
-***Work In Progress***
 
 Bindapter use the power of DataBinding to build a flexible RecyclerView.Adapter which will save you a lot of time.
 
@@ -24,3 +23,48 @@ recyclerView.adapter = adapter
 ```
 
 **As simple as that, now you can spend your time on more important things**
+
+
+## Setup
+
+1. Active DataBinding in your project `buil.gradle`
+
+```groovy
+android {
+    dataBinding {
+        enabled true
+    }
+}
+```
+
+1.1 ***If you are using Kotlin***  - Configure Databinding Compiler with Kapt
+
+```groovy
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+  kapt 'com.android.databinding:compiler:3.0.1'
+}
+```
+
+2. Configure maven url in your root `build.gradle` *This one is temporal 😄*
+
+```groovy
+repositories {
+  maven { url  "http://dl.bintray.com/silmood/bindapter" }
+}
+```
+
+3. Import Bindapter
+
+  Gradle 3.X.X
+
+```groovy
+implementation 'com.silmood.bindapter:bindapter:0.1.0'
+```
+
+  Gradle 2.X.X
+
+```groovy
+compile 'com.silmood.bindapter:bindapter:0.1.0'
+```
