@@ -7,6 +7,8 @@ Bindapter use the power of DataBinding to build a flexible RecyclerView.Adapter 
 
 Bindapter is totally built with Kotlin + Love 💖.
 
+<img src="https://github.com/silmood/Bindapter/blob/master/capture/bindapter_record.gif" width="300"/>
+
 ## Usage
 
 Only create your Bindapter
