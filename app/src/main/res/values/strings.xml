@@ -2,4 +2,7 @@
     <string name="app_name">SBindapter</string>
     <string name="label_kotlin_example">Kotlin Example</string>
     <string name="label_java_example">Java Example</string>
+    <string name="label_add">Add Item</string>
+    <string name="label_minus">Remove item</string>
+    <string name="img_desc">Image</string>
 </resources>
