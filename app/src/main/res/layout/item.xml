@@ -17,8 +17,8 @@
             android:id="@+id/img"
             android:layout_width="110dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_thumb_demo"
-            android:scaleType="centerCrop"/>
+            app:imgUrl="@{game.thumb}"
+            android:contentDescription="@string/img_desc" />
 
         <TextView
             android:id="@+id/label_title"
@@ -43,6 +43,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:textSize="14sp"
+            app:ratingColor="@{game.steamRatingPercent}"
             android:text="@{game.steamRatingText}"
             tools:text="Very Positive"/>
 
@@ -59,7 +60,7 @@
             android:drawableLeft="@drawable/ic_steam_rating"
             android:drawableStart="@drawable/ic_steam_rating"
             android:drawablePadding="4dp"
-            android:text="@{game.steamRating}"
+            android:text="@{game.steamRatingPercent}"
             tools:text="86"/>
         
         <TextView

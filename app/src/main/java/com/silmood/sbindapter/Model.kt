@@ -7,7 +7,8 @@ import com.google.gson.reflect.TypeToken
 data class Game(val title: String,
                 val steamRatingText: String,
                 val metacriticScore: String,
-                val steamRating: String)
+                val steamRatingPercent: String,
+                val thumb: String)
 
 class GameDataSource {
 
