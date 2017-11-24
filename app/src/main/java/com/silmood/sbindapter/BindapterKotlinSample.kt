@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.*
+import android.widget.Toast
 import com.silmood.bindapter.Bindapter
 import java.util.*
 
@@ -47,7 +48,11 @@ class BindapterKotlinSample: Fragment() {
     private fun setupList(list: RecyclerView) {
         list.layoutManager = LinearLayoutManager(context)
 
-        bindapter = Bindapter(R.layout.item, BR.game)
+        bindapter = Bindapter(R.layout.item,
+                            itemVariableId = BR.game,
+                            handler = Handler(),
+                            handlerId = BR.handler)
+
         bindapter.addItems(GameDataSource.getGames())
         list.adapter = bindapter
     }
@@ -61,6 +66,16 @@ class BindapterKotlinSample: Fragment() {
     private fun removeItem() {
         val position = Random().nextInt(bindapter.itemCount)
         bindapter.removeItem(position)
+    }
+
+    class Handler {
+        fun onClick(view: View){
+            Toast.makeText(view.context, R.string.item_clicked, Toast.LENGTH_SHORT).show()
+        }
+
+        fun onClickImage(view: View, item: Game){
+            Toast.makeText(view.context, item.title, Toast.LENGTH_SHORT).show()
+        }
     }
 
 

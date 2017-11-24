@@ -5,4 +5,5 @@
     <string name="label_add">Add Item</string>
     <string name="label_minus">Remove item</string>
     <string name="img_desc">Image</string>
+    <string name="item_clicked">Item was clicked</string>
 </resources>
