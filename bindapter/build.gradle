@@ -56,7 +56,7 @@ ext {
     siteUrl = 'https://github.com/silmood/Bindapter'
     gitUrl = 'https://github.com/silmood/Bindapter.git'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.1.1'
 
     developerId = 'Silmood'
     developerName = 'Peter Hdz'
