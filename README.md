@@ -80,13 +80,13 @@ allProjects {
   Gradle 3.X.X
 
 ```groovy
-implementation 'com.silmood.bindapter:bindapter:0.1.0'
+implementation 'com.silmood.bindapter:bindapter:0.1.1'
 ```
 
   Gradle 2.X.X
 
 ```groovy
-compile 'com.silmood.bindapter:bindapter:0.1.0'
+compile 'com.silmood.bindapter:bindapter:0.1.1'
 ```
 
 # Listening Events
