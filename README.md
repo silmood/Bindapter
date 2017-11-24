@@ -10,10 +10,28 @@ Bindapter is totally built with Kotlin + Love 💖.
 
 ## Usage
 
-Only create your Bindapter
+Only create your view using databinding
+
+```xml
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.example.app.Item"/>
+    </data>
+
+   <TextView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{item.title}"/>
+</layout>
+```
+
+Then create your Bindapter
 
 ```kotlin
-val adapter = Bindapter<ItemModel>(R.layout.item_view, BR.data_binding_variable)
+val adapter = Bindapter<ItemModel>(R.layout.item_view, BR.item)
 ```
 
 And then set it to your RecyclerView
