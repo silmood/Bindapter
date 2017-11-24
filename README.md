@@ -77,3 +77,9 @@ Code style
 This project is written on [Kotlin](https://kotlinlang.org/) and uses [ktlint](https://github.com/shyiko/ktlint).
 If you find that one of your pull reviews does not pass the CI server check due to a code style conflict, you can
 easily fix it by running: `./gradlew :bindapter:ktlintFormat`, or running IntelliJ/Android Studio's code formatter.
+
+
+# TODO
+
+* Support multiple view types for different models
+* Support multiple view types for the same model
