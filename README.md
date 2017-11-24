@@ -45,7 +45,7 @@ recyclerView.adapter = adapter
 
 ## Setup
 
-1. Active DataBinding in your project `buil.gradle`
+1. Active DataBinding in your project `build.gradle`
 
 ```groovy
 android {
@@ -89,8 +89,48 @@ implementation 'com.silmood.bindapter:bindapter:0.1.0'
 compile 'com.silmood.bindapter:bindapter:0.1.0'
 ```
 
-Code style
---------------------------
+# Binding Adapters
+A binding adapter is a way to define custom behaviors to set properties in a view. For example, load images with Glide/Picasso or set TextView color according to a model property. [More info](https://developer.android.com/reference/android/databinding/BindingAdapter.html)
+
+### Kotlin
+The sample app contains a file named `BindingAdapters.kt`. This is the way you have to define them; just creating Kotlin file an put the functions there.
+
+```kotlin
+@BindingAdapter("imgUrl")
+fun loadImage(imageView: ImageView, url: String) {
+    Glide.with(imageView.context)
+            .load(url)
+            .into(imageView)
+}
+
+@BindingAdapter("ratingColor")
+fun ratingColor(textView: TextView, ratingPercent: String) {
+    val percantage = ratingPercent.toInt()
+    val context = textView.context
+
+    val color = when {
+        percantage > 95 -> ContextCompat.getColor(context, R.color.positive_1)
+        percantage > 90 -> ContextCompat.getColor(context, R.color.positive_2)
+        else -> ContextCompat.getColor(context, R.color.negative)
+    }
+
+    textView.setTextColor(color)
+}
+```
+
+### Java
+If you are using Java you just have to define your binding adapters as static methods.
+
+```java
+@BindingAdapter({"bind:imageUrl", "bind:error"})
+public static void loadImage(ImageView view, String url, Drawable error) {
+   Picasso.with(view.getContext()).load(url).error(error).into(view);
+}
+```
+
+
+
+# Code Style
 
 This project is written on [Kotlin](https://kotlinlang.org/) and uses [ktlint](https://github.com/shyiko/ktlint).
 If you find that one of your pull reviews does not pass the CI server check due to a code style conflict, you can
