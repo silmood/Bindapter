@@ -9,4 +9,10 @@ class BindapterHolder<in MODEL>(private val binding: ViewDataBinding) : Recycler
         binding.setVariable(itemVariableId, item)
         binding.executePendingBindings()
     }
+
+    fun bindVariable(variableId: Int, variable: Any) {
+        binding.setVariable(variableId, variable)
+        binding.executePendingBindings()
+    }
+
 }

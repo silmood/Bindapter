@@ -6,13 +6,25 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
-/**
- * Main component to be used instead of any simple adapter
- */
 class Bindapter<MODEL>(private val viewItemResId: Int,
                        private val itemVariableId: Int) : RecyclerView.Adapter<BindapterHolder<MODEL>>() {
 
+    private var handler: Any?
+    private var handlerId: Int?
     private val items: MutableList<MODEL> = mutableListOf()
+
+    init {
+        handler = null
+        handlerId = null
+    }
+
+    constructor(viewItemResId: Int,
+                itemVariableId: Int,
+                handler: Any,
+                handlerId: Int): this(viewItemResId, itemVariableId) {
+        this.handler =  handler
+        this.handlerId = handlerId
+    }
 
     override fun getItemCount() = items.size
 
@@ -29,6 +41,10 @@ class Bindapter<MODEL>(private val viewItemResId: Int,
     override fun onBindViewHolder(holder: BindapterHolder<MODEL>, position: Int) {
         val item = items[position]
         holder.bindItem(itemVariableId, item)
+
+        handler?.let {
+            holder.bindVariable(handlerId!!, handler!!)
+        }
     }
 
     fun addItem(item: MODEL) {
